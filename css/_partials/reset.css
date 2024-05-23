@@ -1,0 +1,32 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* icon class */
+i {
+    margin: 0px 0px 0px 10px;
+    font-size: 20px;
+    color: var(--color-grey);
+}
+
+/* fine icon class */
+
+/* button class */
+.col-small-cerca button {
+    border: none;
+    background-color: var(--color-white);
+    margin: 0px 10px;
+
+}
+
+
+.col-small-cerca-1 button {
+    background-color: var(--color-small-col);
+    border: none;
+
+
+}
+
+/* fine button class */

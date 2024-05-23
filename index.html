@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <title>Web App</title>
+</head>
+
+<body>
+    <main>
+        <div id="app" style="height: 100%; width: 100%; display: flex;">
+            <!-- inizio container-left -->
+
+            <div class="container-left">
+
+                <!-- col header -->
+
+                <div class="col-small">
+                    <div class="col-small-head-1 ">
+                        <div class="left-head">
+                            <img class="img-profile" src="img/avatar_1.jpg" alt="profile">
+
+                        </div>
+                        <div class="right-head">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fas fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- fine col-header -->
+
+                <!-- inizio col-blue -->
+
+                <div class="col-small ">
+                    <div class="img-text-blue">
+                        <i class="fas fa-bell-slash"></i>
+                        <div>
+                            <h2>Michele</h2>
+                            <span>Ultimo accesso oggi alle 16:26</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-small-cerca">
+                    <div class="img-text">
+                        <button><i class="fas fa-magnifying-glass"></i></button>
+
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+
+                    </div>
+
+                </div>
+
+                <!-- fine-col blue -->
+
+                <!-- inizio col-profile -->
+
+                <div class="col-profiels">
+
+                    <!-- profile-1 -->
+
+                    <div class="col-small" v-for="(element, index) in contacts">
+                        <div class="img-text">
+                            <img :src="prova(index)" class="img-profile" alt="profile">
+                            <div class="profile-none">
+                                <h2>{{index.name}}</h2>
+                                <span>Ultimo accesso oggi alle 16:26</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- fine profile-1 -->
+
+
+                </div>
+            </div>
+
+            <!-- fine container-left -->
+
+            <!-- inizio container-chat -->
+
+
+            <div class="container-chat">
+
+                <!-- inizio col-header-2 -->
+
+                <div class="col-small-head ">
+                    <div class="left-head">
+                        <img class="img-profile" src="img/avatar_1.jpg" alt="profile">
+                        <div class="name-profile">
+                            <h2>Michele</h2>
+                            <span>Ultimo accesso oggi alle 16:26</span>
+                        </div>
+
+                    </div>
+                    <div class="right-head">
+                        <i class="fas fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- fine col-header-2 -->
+
+                <!-- inizio col-chat -->
+
+                <div class="col-chat">
+                    <div class="text-position d-flex-text">
+                        <div class="text-class-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+                            corporis blanditiis impedit consectetur laudantium excepturi ratione dignissimos dolorem
+                            quis
+                            repellendus asperiores dolor totam ut culpa
+                            <i class="fas fa-angle-down ic-1"></i>
+                            <div class="ic-2"><span>16:13</span></div>
+                        </div>
+                        <div class="text-class-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+                            corporis blanditiis impedit consectetur laudantium excepturi ratione dignissimos dolorem
+                            quis
+                            repellendus asperiores dolor totam ut culpa
+                            <i class="fas fa-angle-down ic-1"></i>
+                            <div class="ic-2"><span>16:15</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- fine col-chat -->
+
+                <!-- inizio col cerca -->
+
+                <div class="col-small-cerca-1">
+                    <div class="img-text">
+                        <button><i class="fa-regular fa-face-meh-blank"></i></button>
+
+
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <button><i class="fas fa-microphone"></i></button>
+
+                    </div>
+
+                </div>
+
+                <!-- fine col cerca -->
+
+            </div>
+
+            <!-- fine container-chat -->
+        </div>
+    </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
