@@ -65,11 +65,11 @@
 
                     <!-- profile-1 -->
 
-                    <div class="col-small" v-for="(element, index) in contacts">
+                    <div @click="account(index)" class="col-small" v-for="(element, index) in contacts">
                         <div class="img-text">
-                            <img :src="prova(index)" class="img-profile" alt="profile">
+                            <img :src="images(index)" class="img-profile" alt="profile">
                             <div class="profile-none">
-                                <h2>{{index.name}}</h2>
+                                <h2>{{element.name}}</h2>
                                 <span>Ultimo accesso oggi alle 16:26</span>
                             </div>
                         </div>
@@ -114,20 +114,17 @@
 
                 <div class="col-chat">
                     <div class="text-position d-flex-text">
-                        <div class="text-class-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-                            corporis blanditiis impedit consectetur laudantium excepturi ratione dignissimos dolorem
-                            quis
-                            repellendus asperiores dolor totam ut culpa
+                        <div class="text-class-1" v-for="(element, index) in ">{{element.message}}
                             <i class="fas fa-angle-down ic-1"></i>
                             <div class="ic-2"><span>16:13</span></div>
                         </div>
-                        <div class="text-class-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+                        <!-- <div class="text-class-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
                             corporis blanditiis impedit consectetur laudantium excepturi ratione dignissimos dolorem
                             quis
                             repellendus asperiores dolor totam ut culpa
                             <i class="fas fa-angle-down ic-1"></i>
                             <div class="ic-2"><span>16:15</span></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
