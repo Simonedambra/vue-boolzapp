@@ -7,14 +7,14 @@ let elementObj = {
 
         return {
 
-
+            searchOn: '',
             countAccount: 0,
             newMessages: '',
             contacts: [
                 {
                     name: 'Michele',
                     avatar: '/img/avatar_1.jpg',
-                    visible: true,
+                    visible: false,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -196,14 +196,20 @@ let elementObj = {
                 status: 'sent'
             }
             this.contacts[this.countAccount].messages.push(newObj)
+            this.newMessages = '';
             setTimeout(() => {
                 let newObj2 = {
                     message: 'ok',
-                    status: 'received'
+                    status: 'received',
                 }
                 this.contacts[this.countAccount].messages.push(newObj2)
             }, 1000)
             console.log(newObj)
+
+        },
+        search() {
+
+
 
         }
 
