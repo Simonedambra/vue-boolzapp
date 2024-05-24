@@ -9,6 +9,7 @@ let elementObj = {
 
 
             countAccount: 0,
+            newMessages: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -189,7 +190,22 @@ let elementObj = {
                 console.log(countAccount)
 
         },
+        enterClick() {
+            let newObj = {
+                message: this.newMessages,
+                status: 'sent'
+            }
+            this.contacts[this.countAccount].messages.push(newObj)
+            setTimeout(() => {
+                let newObj2 = {
+                    message: 'ok',
+                    status: 'received'
+                }
+                this.contacts[this.countAccount].messages.push(newObj2)
+            }, 1000)
+            console.log(newObj)
 
+        }
 
 
     },
