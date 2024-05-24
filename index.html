@@ -1,158 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <title>Web App</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Boolzapp</title>
 </head>
 
 <body>
-    <main>
-        <div id="app" style="height: 100%; width: 100%; display: flex;">
-            <!-- inizio container-left -->
-
-            <div class="container-left">
-
-                <!-- col header -->
-
-                <div class="col-small">
-                    <div class="col-small-head-1 ">
-                        <div class="left-head">
-                            <img class="img-profile" src="img/avatar_1.jpg" alt="profile">
-
-                        </div>
-                        <div class="right-head">
-                            <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fas fa-message"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-
-                        </div>
-
-                    </div>
+    <div id="app" class="container">
+        <!-- contenitore sx -->
+        <div class="left">
+            <div class="header-left">
+                <div class="header-left-logo">
+                    <img src="img/avatar_1.jpg" alt="Utente">
+                    <span>Nome</span>
                 </div>
-
-                <!-- fine col-header -->
-
-                <!-- inizio col-blue -->
-
-                <div class="col-small ">
-                    <div class="img-text-blue">
-                        <i class="fas fa-bell-slash"></i>
-                        <div>
-                            <h2>Michele</h2>
-                            <span>Ultimo accesso oggi alle 16:26</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-small-cerca">
-                    <div class="img-text">
-                        <button><i class="fas fa-magnifying-glass"></i></button>
-
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
-
-                    </div>
-
-                </div>
-
-                <!-- fine-col blue -->
-
-                <!-- inizio col-profile -->
-
-                <div class="col-profiels">
-
-                    <!-- profile-1 -->
-
-                    <div @click="account(index)" class="col-small" v-for="(element, index) in contacts">
-                        <div class="img-text">
-                            <img :src="images(index)" class="img-profile" alt="profile">
-                            <div class="profile-none">
-                                <h2>{{element.name}}</h2>
-                                <span>Ultimo accesso oggi alle 16:26</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- fine profile-1 -->
-
-
+                <div class="header-left-icons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
-
-            <!-- fine container-left -->
-
-            <!-- inizio container-chat -->
-
-
-            <div class="container-chat">
-
-                <!-- inizio col-header-2 -->
-
-                <div class="col-small-head ">
-                    <div class="left-head">
-                        <img class="img-profile" src="/img/avatar_1.jpg" alt="profile">
-                        <div class="name-profile">
-                            <h2>Michele</h2>
-                            <span>Ultimo accesso oggi alle 16:26</span>
-                        </div>
-
-                    </div>
-                    <div class="right-head">
-                        <i class="fas fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-
-                    </div>
-
+            <div class="left-disclaimer">
+                <div class="left-disclaimer-logo">
+                    <i class="fa fa-bell-slash" aria-hidden="true"></i>
                 </div>
-
-                <!-- fine col-header-2 -->
-
-                <!-- inizio col-chat -->
-
-                <div class="col-chat">
-                    <div class="text-position d-flex-text">
-                        <div class="text-class-1" v-for="(element, index) in ">{{element.message}}
-                            <i class="fas fa-angle-down ic-1"></i>
-                            <div class="ic-2"><span>16:13</span></div>
-                        </div>
-                        <!-- <div class="text-class-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-                            corporis blanditiis impedit consectetur laudantium excepturi ratione dignissimos dolorem
-                            quis
-                            repellendus asperiores dolor totam ut culpa
-                            <i class="fas fa-angle-down ic-1"></i>
-                            <div class="ic-2"><span>16:15</span></div>
-                        </div> -->
-                    </div>
+                <div class="left-disclaimer-text">
+                    <h3>Ricevi notifiche di nuovi messaggi</h3>
+                    <a href="#">Attiva notifiche desktop</a>
                 </div>
-
-                <!-- fine col-chat -->
-
-                <!-- inizio col cerca -->
-
-                <div class="col-small-cerca-1">
-                    <div class="img-text">
-                        <button><i class="fa-regular fa-face-meh-blank"></i></button>
-
-
-                        <input type="text" placeholder="Scrivi un messaggio">
-                        <button><i class="fas fa-microphone"></i></button>
-
-                    </div>
-
-                </div>
-
-                <!-- fine col cerca -->
-
             </div>
-
-            <!-- fine container-chat -->
+            <div class="left-searchbar">
+                <label class="search-label" for="search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+                <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
+                    name="search">
+            </div>
+            <div class="contacts">
+                <div @click="account(index)" class="contact" v-for="index in contacts">
+                    <div class="contact-logo">
+                        <img :src="index.avatar" alt="Utente">
+                    </div>
+                    <div class="contact-info">
+                        <h3>
+                            <span class="contact-name">{{index.name}}</span>
+                            <span class="time f-right"></span>
+                        </h3>
+                        <small></small>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+        <!-- /contenitore sx -->
+        <!-- contenitore dx -->
+        <div class="right">
+            <div class="header-right">
+                <div class="header-right-logo">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <h3>
+                        <span id="header-right-contact-name">Michele</span> <br>
+                        <small class="time">Ultimo accesso oggi alle </small>
+                    </h3>
+                </div>
+                <div class="header-right-icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="right-messages-container">
+
+                <div class="right-messages">
+                    <ul>
+                        <li class="message" v-if="">
+
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="right-footer">
+                <div class="right-footer-icon f-left">
+                    <i class="far fa-smile"></i>
+                </div>
+                <input class="new-message-inputs" placeholder="Scrivi un messaggio">
+                <div class="right-footer-icon f-right">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <!-- /contenitore dx -->
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

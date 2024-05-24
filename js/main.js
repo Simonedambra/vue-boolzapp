@@ -1,4 +1,4 @@
-'use strict'
+
 const { createApp } = Vue;
 
 let elementObj = {
@@ -172,28 +172,24 @@ let elementObj = {
                     ],
                 },
             ],
-
+            countAccount: 0,
         }
 
     },
     methods: {
         images(index) {
             let img = this.contacts[index].avatar;
-
             return img;
         },
         account(index) {
-            let countAccount = 0;
             countAccount = (index);
+            let accountMess = countAccount;
+            console.log(accountMess)
+            return accountMess;
 
         },
-        message() {
-            let result = this.contacts[countAccount].messages
-            return result;
-        },
-        textmessage() {
-            return this.contacts[countAccount].messages;
-        }
+
+
 
     },
 
