@@ -8,7 +8,7 @@ let elementObj = {
         return {
 
 
-
+            countAccount: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -171,8 +171,10 @@ let elementObj = {
                         }
                     ],
                 },
+
             ],
-            countAccount: 0,
+
+
         }
 
     },
@@ -182,10 +184,9 @@ let elementObj = {
             return img;
         },
         account(index) {
-            countAccount = (index);
-            let accountMess = countAccount;
-            console.log(accountMess)
-            return accountMess;
+            console.log(index)
+            this.countAccount = (index),
+                console.log(countAccount)
 
         },
 

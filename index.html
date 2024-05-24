@@ -44,13 +44,13 @@
                     name="search">
             </div>
             <div class="contacts">
-                <div @click="account(index)" class="contact" v-for="index in contacts">
+                <div class="contact" v-for="(element,index) in contacts" @click="account(index)">
                     <div class="contact-logo">
-                        <img :src="index.avatar" alt="Utente">
+                        <img :src="element.avatar" alt="Utente">
                     </div>
                     <div class="contact-info">
                         <h3>
-                            <span class="contact-name">{{index.name}}</span>
+                            <span class="contact-name">{{element.name}}{{countAccount}}</span>
                             <span class="time f-right"></span>
                         </h3>
                         <small></small>
@@ -78,9 +78,12 @@
             <div class="right-messages-container">
 
                 <div class="right-messages">
-                    <ul>
-                        <li class="message" v-for="index in contacts[countAccount].messages">
-                            messaggio
+                    <ul v-for="index in contacts[countAccount].messages">
+                        <li class="message" v-if="index.status==='sent'" :class="'sent'">
+                            {{index.message}}
+                        </li>
+                        <li class="message" v-else-if="index.status==='received'" :class="'received'">
+                            {{index.message}}
                         </li>
                     </ul>
                 </div>
