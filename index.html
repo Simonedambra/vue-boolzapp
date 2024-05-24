@@ -41,10 +41,10 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
                 <input v-model="searchOn" id="contacts-filter" class="left-searchbar-input"
-                    placeholder="Cerca o inizia una nuova chat" name="search" @keydown="search()">
+                    placeholder="Cerca o inizia una nuova chat" name="search" @keydown="filteredContacts()">
             </div>
             <div class="contacts">
-                <div class="contact" v-for="(element,index) in contacts" @click="account(index)">
+                <div class="contact" v-for="(element,index) in filteredContacts" @click="account(index)">
                     <div class="contact-logo">
                         <img :src="element.avatar" alt="Utente">
                     </div>

@@ -14,7 +14,7 @@ let elementObj = {
                 {
                     name: 'Michele',
                     avatar: '/img/avatar_1.jpg',
-                    visible: false,
+                    visible: true,
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
@@ -207,16 +207,21 @@ let elementObj = {
             console.log(newObj)
 
         },
-        search() {
 
 
+    },
+    computed: {
+        filteredContacts() {
+            this.searchOn
+            console.log(this.searchOn)
+
+
+            return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchOn));
 
         }
 
 
-    },
-
-
+    }
 }
 const app = createApp(elementObj);
 app.mount('#app');
